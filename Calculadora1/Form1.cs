@@ -67,7 +67,16 @@ namespace Calculadora1
             }
             else if (operacao == "DIVISÃO")
             {
-                texto.Text = Convert.ToString(valor1 / valor2);
+                if (valor2 == 0)
+                {
+                    string message = "O segundo valor não pode ser 0!";
+                    string title = "ERRO";
+                    MessageBox.Show(message, title);
+                }
+                else
+                {
+                    texto.Text = Convert.ToString(valor1 / valor2);
+                }
             }
         }
 
